@@ -24,3 +24,9 @@
 body{
     background: url("../images/gradient_squares.png")
 }
+#status{
+    color:red;
+    font-size: 250%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}

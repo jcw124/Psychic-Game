@@ -25,15 +25,15 @@ console.log('The correct letter is: ' + theletter);
 // get the key that the users selects
     document.onkeyup = function (event) {
 
+//clear the win or lose mesasge
+        document.getElementById('status').innerHTML="";
+     
+
     // declare the users guess and make it lowercase
         userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
 
-    // IF userGuess IS INCORRECT 
-        // STORE USER'S GUESS TO alreadyGuessed ARRAY
-            // REPEATED LETTERS MAY NOT BE COUNTED IN alreadyGuessed
-        // SUBTRACT guessesLeft BY 1
-        // *userGuess MUST BE A LETTER, NOT ANY OTHER KEY*
+        //check the users guess and display incorrect letters chosen
         if (userGuess !== theletter && lettersguessed.indexOf(userGuess) < 0 && alphabet.indexOf(userGuess) >= 0) {
             lettersguessed[lettersguessed.length] = userGuess;
             guesses--;
@@ -44,34 +44,33 @@ console.log('The correct letter is: ' + theletter);
         // RESET guessesLeft TO 9
         // RESET ARRAY OF alreadyGuessed
         // COMPUTER SHOULD RE-PICK A RANDOM LETTER
+
+        //if the user guesses the correct letter 
         if (userGuess == theletter) {
             win++;
-            guesses = 9;
+            guesses = 10;
             alreadyGuessed = [];
             theletter = alphabet[Math.floor(Math.random() * alphabet.length)];
             console.log('You win! The new letter is: ' + theletter);
-
+            document.getElementById('status').innerHTML="You Won!";
         }
 
-    // IF guessesLeft REACHES 0:
-        // losses +1
-        // RESET guessesLeft TO 9
-        // RESET ARRAY OF alreadyGuessed TO 0
-        // COMPUTER SHOULD RE-PICK A RANDOM LETTER
+
+        //if the user reaches 0 guesses
         if (guesses == 0) {
             lose++;
-            guessesLeft = 10;
+            guesses = 10;
             lettersguessed= [];
             computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
             console.log('You lose! Computer: ' + theletter);
-
-
+            document.getElementById('status').innerHTML="You Lost!";
         }
+        
 
     // display wins, loses, letters and guesses
         document.getElementById('win').innerHTML = 'Number of Wins ' + win;
         document.getElementById('lose').innerHTML = 'Number of Losses:' + lose;
-        document.getElementById('lettersguessed').innerHTML = 'Remaining Guesses: ' + lettersguessed.join(' ');
-        document.getElementById('guesses').innerHTML = 'You Already guessed: ' + guesses;
+        document.getElementById('guesses').innerHTML = 'Remaining Guesses:  ' + guesses;
+        document.getElementById('lettersguessed').innerHTML = 'You Already guessed: ' + lettersguessed.join(' ');
 
     } 
