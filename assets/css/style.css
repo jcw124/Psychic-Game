@@ -1,0 +1,26 @@
+*{
+    text-align: center;
+}
+#title{
+    color: blueviolet;
+}
+#question{
+    color: fuchsia;
+    font-family: fantasy;
+    padding: 25px;
+    font-size: 75px;
+}
+.row{
+    font-family: cursive;
+    padding: 25px;
+    font-size: 35px;
+}
+#lettersguessed{
+    color: blue;
+} 
+#guesses{
+    color: rgb(216, 9, 95);
+}
+body{
+    background: url("../images/gradient_squares.png")
+}
