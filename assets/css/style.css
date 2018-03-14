@@ -22,7 +22,7 @@
     color: rgb(216, 9, 95);
 }
 body{
-    background: url("../images/gradient_squares.png")
+    background: url("../images/weather.png")
 }
 #status{
     color:red;
