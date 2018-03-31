@@ -19,9 +19,6 @@ var userGuess;
 // declare a variable for the computer's letter
 var theletter = alphabet[Math.floor(Math.random() * alphabet.length)];
 
-// show the letter in the console for testing
-console.log('The correct letter is: ' + theletter);
-
 // get the key that the users selects
     document.onkeyup = function (event) {
 
@@ -51,8 +48,7 @@ console.log('The correct letter is: ' + theletter);
             guesses = 10;
             alreadyGuessed = [];
             theletter = alphabet[Math.floor(Math.random() * alphabet.length)];
-            console.log('You win! The new letter is: ' + theletter);
-            document.getElementById('status').innerHTML="You Won!";
+            document.getElementById('status').innerHTML="You Won! The Letter was " + theletter;
         }
 
 
@@ -62,8 +58,7 @@ console.log('The correct letter is: ' + theletter);
             guesses = 10;
             lettersguessed= [];
             computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-            console.log('You lose! Computer: ' + theletter);
-            document.getElementById('status').innerHTML="You Lost!";
+            document.getElementById('status').innerHTML="You Lost! The Letter was " + theletter;
         }
         
 
